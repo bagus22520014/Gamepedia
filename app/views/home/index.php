@@ -1,1 +1,3 @@
-<h1>Test Home!</h1>
+<section class="home-section">
+    <div class="text">Test Home!</div>
+</section>

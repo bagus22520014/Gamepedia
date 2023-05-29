@@ -7,6 +7,8 @@ class game extends Controller
         $data['title'] = 'List Game';
         $data['game'] = $this->model('Game_model')->getAllGame();
         $this->view('templates/header', $data);
+        $this->view('templates/navbar');
+        $this->view('templates/sidebar');
         $this->view('game/index', $data);
         $this->view('templates/footer');
     }
