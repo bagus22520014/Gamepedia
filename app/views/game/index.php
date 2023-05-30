@@ -1,15 +1,20 @@
 <section class="home-section">
-    <div class="text">List Game</div>
-    <?php foreach ($data['game'] as $game) : ?>
-        <ul>
-            <li><?= $game['judul']; ?></li>
-            <li><?= $game['release']; ?></li>
-            <li><?= $game['Genre']; ?></li>
-            <li><?= $game['Platform']; ?></li>
-            <li><?= $game['Pengembang']; ?></li>
-            <li><?= $game['Penerbit']; ?></li>
-            <li><?= $game['Gambar']; ?></li>
-            <li><?= $game['Metascore']; ?></li>
-        </ul>
-    <?php endforeach ?>
+    <div class="home-content">
+        <div class="wrapper">
+
+            <h2><strong>All Games</strong></h2>
+
+            <div class="cards">
+                <?php foreach ($data['game'] as $game) : ?>
+                    <a href="">
+                        <figure class="card">
+                            <img src=" <?= $game['Gambar']; ?>" />
+                            <figcaption><?= $game['judul']; ?></figcaption>
+                        </figure>
+                    </a>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </div>
+
 </section>
