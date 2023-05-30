@@ -12,4 +12,15 @@ class game extends Controller
         $this->view('game/index', $data);
         $this->view('templates/footer');
     }
+
+    public function detail($id)
+    {
+        $data['title'] = 'Detail - GamePedia';
+        $data['game'] = $this->model('Game_model')->getGameById($id);
+        $this->view('templates/header', $data);
+        $this->view('templates/navbar');
+        $this->view('templates/sidebar');
+        $this->view('game/detail', $data);
+        $this->view('templates/footer');
+    }
 }

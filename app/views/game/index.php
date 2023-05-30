@@ -6,9 +6,9 @@
 
             <div class="cards">
                 <?php foreach ($data['game'] as $game) : ?>
-                    <a href="">
+                    <a href="<?= BASEURL; ?>/game/detail/ <?= $game['id']; ?>">
                         <figure class="card">
-                            <img src=" <?= $game['Gambar']; ?>" />
+                            <img src=" <?= $game['Gambar']; ?> " />
                             <figcaption><?= $game['judul']; ?></figcaption>
                         </figure>
                     </a>
