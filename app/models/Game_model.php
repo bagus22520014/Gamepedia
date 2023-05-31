@@ -22,4 +22,25 @@ class Game_model
         $this->db->bind('id', $id);
         return $this->db->single();
     }
+
+    public function tambahDataGame($data)
+    {
+        $query = "INSERT INTO data_game
+                    VALUES
+                    ('', :judul, :release, :Genre, :Platform, :Pengembang, :Penerbit, :Gambar, :Metascore)";
+
+        $this->db->query($query);
+        $this->db->bind('judul', $data['judul']);
+        $this->db->bind('release', $data['release']);
+        $this->db->bind('Genre', $data['Genre']);
+        $this->db->bind('Platform', $data['Platform']);
+        $this->db->bind('Pengembang', $data['Pengembang']);
+        $this->db->bind('Penerbit', $data['Penerbit']);
+        $this->db->bind('Gambar', $data['Gambar']);
+        $this->db->bind('Metascore', $data['Metascore']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }

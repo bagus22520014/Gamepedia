@@ -23,4 +23,12 @@ class game extends Controller
         $this->view('game/detail', $data);
         $this->view('templates/footer');
     }
+
+    public function tambah()
+    {
+        if ($this->model('Game_model')->tambahDataGame($_POST) > 0) {
+            header('Location:' . BASEURL . '/game');
+            exit;
+        }
+    }
 }
