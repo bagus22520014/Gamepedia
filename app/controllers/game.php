@@ -27,8 +27,12 @@ class game extends Controller
     public function tambah()
     {
         if ($this->model('Game_model')->tambahDataGame($_POST) > 0) {
+            Flasher::setFlash('Success!', 'successfully added the game', 'success', 'bx bx-check-circle');
             header('Location:' . BASEURL . '/game');
             exit;
+        } else {
+            Flasher::setFlash('Error!', 'failed to add game', 'danger', 'bx bx-error-circle');
+            header('Location:' . BASEURL . '/game');
         }
     }
 }

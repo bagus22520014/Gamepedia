@@ -1,6 +1,9 @@
 <section>
     <div class="home-section">
         <div class="home-content">
+            <div class="alert-content">
+                <?php Flasher::flash(); ?>
+            </div>
             <div class="wrapper">
                 <h2><strong>All Games</strong></h2>
                 <div class="aksi">
