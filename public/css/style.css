@@ -287,11 +287,11 @@ body {
 .home-section {
   position: relative;
   background: #E4E9F7;
-  min-height: 100vh;
-  top: 68px;
+  min-height: calc(90vh + 3px);
+  top: 76px;
   left: 260px;
   width: calc(100% - 260px);
-  height: calc(100% - 68px);
+  height: calc(100% - 76px);
   transition: all 0.5s ease;
   z-index: 2;
 }
@@ -307,10 +307,6 @@ body {
   font-size: 25px;
   font-weight: 500;
   margin: 18px
-}
-
-.home-section .home-content {
-  margin-top: 18px;
 }
 
 .abs,
@@ -392,7 +388,6 @@ h2 {
 h2 strong {
   z-index: 2;
   background: #E4E9F7;
-  ;
   padding: 4px 8px;
 }
 
@@ -528,7 +523,6 @@ section {
   display: flex;
 }
 
-
 .aksi .button-tambah {
   display: flex;
   margin-left: 20px;
@@ -548,6 +542,55 @@ section {
 }
 
 .aksi .button-tambah i {
+  color: #fff;
+  font-size: 15px;
+}
+
+.aksi .button-ubah {
+  display: flex;
+  height: 30px;
+  width: 50px;
+  margin-right: 20px;
+  align-items: center;
+  padding: 6px 18px;
+  background: #4070f4;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s ease;
+
+}
+
+.aksi .button-ubah:hover {
+  background: #275df1;
+}
+
+.aksi .button-ubah i {
+  color: #fff;
+  font-size: 15px;
+}
+
+.aksi .button-hapus {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 10px;
+  height: 30px;
+  width: 50px;
+  align-items: center;
+  padding: 6px 18px;
+  background: #DC0000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  float: left;
+}
+
+.aksi .button-hapus:hover {
+  background: #d00000;
+}
+
+.aksi .button-hapus i {
   color: #fff;
   font-size: 15px;
 }
@@ -926,6 +969,7 @@ button.close {
 }
 
 .alert-white.rounded {
+  margin-top: 10px;
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 3px;

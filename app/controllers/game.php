@@ -35,4 +35,16 @@ class game extends Controller
             header('Location:' . BASEURL . '/game');
         }
     }
+
+    public function hapus($id)
+    {
+        if ($this->model('Game_model')->hapusDataGame($id) > 0) {
+            Flasher::setFlash('Success!', 'game has been successfully deleted', 'success', 'bx bx-check-circle');
+            header('Location:' . BASEURL . '/game');
+            exit;
+        } else {
+            Flasher::setFlash('Error!', 'failed to delete the game', 'danger', 'bx bx-error-circle');
+            header('Location:' . BASEURL . '/game');
+        }
+    }
 }
