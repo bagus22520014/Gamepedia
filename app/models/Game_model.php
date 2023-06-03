@@ -84,4 +84,14 @@ class Game_model
 
         return $this->db->rowCount();
     }
+
+    public function cariDataGame()
+    {
+        $keyword = $_POST['keyword'];
+        $query = "SELECT * FROM data_game WHERE judul LIKE :keyword";
+        $this->db->query($query);
+        $this->db->bind('keyword', "%$keyword%");
+
+        return $this->db->resultSet();
+    }
 }

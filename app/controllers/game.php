@@ -69,4 +69,15 @@ class game extends Controller
             exit;
         }
     }
+
+    public function cari()
+    {
+        $data['title'] = 'List Game - GamePedia';
+        $data['game'] = $this->model('Game_model')->cariDataGame();
+        $this->view('templates/header', $data);
+        $this->view('templates/navbar');
+        $this->view('templates/sidebar');
+        $this->view('game/index', $data);
+        $this->view('templates/footer');
+    }
 }
