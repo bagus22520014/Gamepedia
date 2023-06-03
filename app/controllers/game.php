@@ -33,6 +33,7 @@ class game extends Controller
         } else {
             Flasher::setFlash('Error!', 'failed to add game', 'danger', 'bx bx-error-circle');
             header('Location:' . BASEURL . '/game');
+            exit;
         }
     }
 
@@ -45,6 +46,27 @@ class game extends Controller
         } else {
             Flasher::setFlash('Error!', 'failed to delete the game', 'danger', 'bx bx-error-circle');
             header('Location:' . BASEURL . '/game');
+            exit;
+        }
+    }
+
+    public function getubah()
+    {
+        echo json_encode($this->model('Game_model')->getGameById($_POST['id']));
+    }
+
+    public function ubah()
+    {
+        $gameId = $_POST['id'];
+
+        if ($this->model('Game_model')->ubahDataGame($_POST) > 0) {
+            Flasher::setFlash('Success!', 'game data has been successfully updated', 'success', 'bx bx-check-circle');
+            header('Location:' . BASEURL . '/game/detail/' . $gameId);
+            exit;
+        } else {
+            Flasher::setFlash('Error!', 'failed to update game data', 'danger', 'bx bx-error-circle');
+            header('Location:' . BASEURL . '/game/detail/' . $gameId);
+            exit;
         }
     }
 }

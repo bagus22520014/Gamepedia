@@ -12,13 +12,10 @@
                             <i class='bx bxs-trash-alt'></i>
                         </div>
                     </a>
-                    <div id="hireBtn" class="button-ubah">
+                    <div id="ubahbtn" class="button-ubah ubahbtn" data-id="<?= $data['game']['id']; ?>">
                         <i class='bx bx-edit-alt'></i>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
@@ -26,13 +23,13 @@
     <div class="popup-outer">
         <div class="popup-box">
             <header>GamePedia</header>
-            <i id="close" class="bx bx-x close"></i>
-
-            <form action="<?= BASEURL; ?>/game/tambah" method="post">
+            <i id="closePopup" class="bx bx-x close"></i>
+            <form action="<?= BASEURL; ?>/game/ubah" method="post" id="form-ubah">
+                <input type="hidden" name="id" id="id">
 
                 <div class="form first">
                     <div class="details personal">
-                        <span class="title">Add Games</span>
+                        <span class="title">Change Data Games</span>
 
                         <div class="fields">
 
@@ -81,7 +78,7 @@
 
                     <div class="button">
                         <button id="close" class="cancel">Cancel</button>
-                        <button type="submit" class="send">Send</button>
+                        <button type="submit" class="send">Change</button>
                     </div>
             </form>
         </div>
@@ -89,17 +86,66 @@
 </section>
 
 <script>
-    const section = document.querySelector("section"),
-        hireBtn = section.querySelector("#hireBtn"),
-        closeBtn = section.querySelectorAll("#close");
+    const section = document.querySelector("section");
+    const ubahbtn = section.querySelector("#ubahbtn");
+    const closeBtn = section.querySelector("#close");
 
-    hireBtn.addEventListener("click", () => {
+    ubahbtn.addEventListener("click", () => {
         section.classList.add("show");
+
+        const id = ubahbtn.getAttribute("data-id");
+
+        $.ajax({
+            url: 'http://localhost/1/public/game/getubah',
+            data: {
+                id: id
+            },
+            method: 'post',
+            dataType: 'json',
+            success: function(data) {
+                $('#judul').val(data.judul);
+                $('#release').val(data.release);
+                $('#Genre').val(data.Genre);
+                $('#Platform').val(data.Platform);
+                $('#Pengembang').val(data.Pengembang);
+                $('#Penerbit').val(data.Penerbit);
+                $('#Gambar').val(data.Gambar);
+                $('#Metascore').val(data.Metascore);
+                $('#id').val(data.id);
+            }
+        });
     });
 
-    closeBtn.forEach(cBtn => {
-        cBtn.addEventListener("click", () => {
-            section.classList.remove("show");
+    closeBtn.addEventListener("click", () => {
+        section.classList.remove("show");
+    });
+
+    const form = document.getElementById("form-ubah");
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const formAction = form.getAttribute("action");
+
+        $.ajax({
+            url: formAction,
+            method: 'post',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
         });
+
+        section.classList.remove("show");
+    });
+
+    const cancelBtn = section.querySelector(".cancel");
+    cancelBtn.addEventListener("click", () => {
+        section.classList.remove("show");
     });
 </script>
