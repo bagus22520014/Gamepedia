@@ -23,7 +23,7 @@
     <div class="popup-outer">
         <div class="popup-box">
             <header>GamePedia</header>
-            <i id="closePopup" class="bx bx-x close"></i>
+
             <form action="<?= BASEURL; ?>/game/ubah" method="post" id="form-ubah">
                 <input type="hidden" name="id" id="id">
 
@@ -77,7 +77,7 @@
                     </div>
 
                     <div class="button">
-                        <button id="close" class="cancel">Cancel</button>
+                        <button type="button" id="close" class="cancel">Cancel</button>
                         <button type="submit" class="send">Change</button>
                     </div>
             </form>
@@ -96,7 +96,7 @@
         const id = ubahbtn.getAttribute("data-id");
 
         $.ajax({
-            url: 'http://localhost/1/public/game/getubah',
+            url: 'http://localhost/list_game/public/game/getubah',
             data: {
                 id: id
             },
@@ -149,3 +149,5 @@
         section.classList.remove("show");
     });
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

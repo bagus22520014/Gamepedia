@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="button">
-                        <button id="close" class="cancel">Cancel</button>
+                        <button type="button" id="close" class="cancel">Cancel</button>
                         <button type="submit" class="send">Send</button>
                     </div>
             </form>

@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://localhost/1/public');
+define('BASEURL', 'http://localhost/list_game/public');
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
