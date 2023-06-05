@@ -40,7 +40,7 @@
 
                             <div class="input-field">
                                 <label>Release Date</label>
-                                <input type="date" id="release" name="release" placeholder="Enter Release Date" required>
+                                <input type="date" id="release_date" name="release_date" placeholder="Enter Release Date" required>
                             </div>
 
                             <div class="input-field">
@@ -104,7 +104,7 @@
             dataType: 'json',
             success: function(data) {
                 $('#judul').val(data.judul);
-                $('#release').val(data.release);
+                $('#release_date').val(data.release_date);
                 $('#Genre').val(data.Genre);
                 $('#Platform').val(data.Platform);
                 $('#Pengembang').val(data.Pengembang);

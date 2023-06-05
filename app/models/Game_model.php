@@ -28,11 +28,11 @@ class Game_model
     {
         $query = "INSERT INTO data_game
                     VALUES
-                    ('', :judul, :release, :Genre, :Platform, :Pengembang, :Penerbit, :Gambar, :Metascore)";
+                    ('', :judul, :release_date, :Genre, :Platform, :Pengembang, :Penerbit, :Gambar, :Metascore)";
 
         $this->db->query($query);
         $this->db->bind('judul', $data['judul']);
-        $this->db->bind('release', $data['release']);
+        $this->db->bind('release_date', $data['release_date']);
         $this->db->bind('Genre', $data['Genre']);
         $this->db->bind('Platform', $data['Platform']);
         $this->db->bind('Pengembang', $data['Pengembang']);
@@ -60,7 +60,7 @@ class Game_model
     {
         $query = "UPDATE data_game SET
                     judul = :judul,
-                    release = :release,
+                    release_date = :release_date,
                     Genre = :Genre,
                     Platform = :Platform,
                     Pengembang = :Pengembang,
@@ -71,7 +71,7 @@ class Game_model
 
         $this->db->query($query);
         $this->db->bind('judul', $data['judul']);
-        $this->db->bind('release', $data['release']);
+        $this->db->bind('release_date', $data['release_date']);
         $this->db->bind('Genre', $data['Genre']);
         $this->db->bind('Platform', $data['Platform']);
         $this->db->bind('Pengembang', $data['Pengembang']);
