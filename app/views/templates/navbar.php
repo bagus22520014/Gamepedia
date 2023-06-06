@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="logo_item">
         <i class="bx bx-menu" id="sidebarOpen"></i>
-        <img src="<?= BASEURL; ?>/img/logo/logo.png" alt=""></i>GamePedia
+        <img src="<?= BASEURL; ?>/img/logo/logo.png" alt="">GamePedia
     </div>
 
     <form action="<?= BASEURL; ?>/game/cari" method="post">
@@ -19,3 +19,21 @@
         <img src="<?= BASEURL; ?>/img/profile/profile.png" alt="" class="profile" />
     </div>
 </nav>
+
+
+<div class="profile-card" id="profileCard">
+    <div class="image">
+        <img src="<?= BASEURL; ?>/img/profile/profile.png" alt="" class="profile-img" />
+    </div>
+
+    <div class="text-data">
+        <span class="name">Admin</span>
+    </div>
+
+    <div class="buttons">
+        <a href="<?= BASEURL; ?>/Log/logout" onclick="return confirm('Please confirm your intention to log out.');">
+            <button class="button">Logout</button>
+        </a>
+        <button class="button-cancel">Cancel</button>
+    </div>
+</div>

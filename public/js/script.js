@@ -51,3 +51,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var profileButton = document.querySelector(".profile");
+  var cancelButton = document.querySelector(".button-cancel");
+  var profileCard = document.querySelector(".profile-card");
+
+  profileButton.addEventListener("click", function () {
+    profileCard.style.display = "block";
+  });
+
+  cancelButton.addEventListener("click", function () {
+    profileCard.style.display = "none";
+  });
+});

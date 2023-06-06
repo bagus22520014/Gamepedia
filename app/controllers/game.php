@@ -57,15 +57,13 @@ class game extends Controller
 
     public function ubah()
     {
-        $gameId = $_POST['id'];
-
         if ($this->model('Game_model')->ubahDataGame($_POST) > 0) {
             Flasher::setFlash('Success!', 'game data has been successfully updated', 'success', 'bx bx-check-circle');
-            header('Location:' . BASEURL . '/game/detail/' . $gameId);
+            header('Location:' . BASEURL . '/game');
             exit;
         } else {
             Flasher::setFlash('Error!', 'failed to update game data', 'danger', 'bx bx-error-circle');
-            header('Location:' . BASEURL . '/game/detail/' . $gameId);
+            header('Location:' . BASEURL . '/game');
             exit;
         }
     }

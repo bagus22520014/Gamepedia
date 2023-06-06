@@ -15,31 +15,19 @@
     <div class="login">
         <div class="wrapper_login">
             <div class="title">
-                Login Form
+                Login
             </div>
             <form action="<?= BASEURL; ?>/Log/login" method="post">
                 <div class="field">
                     <input type="text" name="username" required>
-                    <label>Email Address</label>
+                    <label>username</label>
                 </div>
                 <div class="field">
                     <input type="password" name="password" required>
                     <label>Password</label>
                 </div>
-                <div class="content">
-                    <div class="checkbox">
-                        <input type="checkbox" id="remember-me">
-                        <label for="remember-me">Remember me</label>
-                    </div>
-                    <div class="pass-link">
-                        <a href="#">Forgot password?</a>
-                    </div>
-                </div>
                 <div class="field">
                     <input type="submit" value="Login">
-                </div>
-                <div class="signup-link">
-                    Not a member? <a href="#">Signup now</a>
                 </div>
             </form>
         </div>
