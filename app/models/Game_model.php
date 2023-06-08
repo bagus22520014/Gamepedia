@@ -28,7 +28,7 @@ class Game_model
     {
         $query = "INSERT INTO data_game
                     VALUES
-                    ('', :judul, :release_date, :Genre, :Platform, :Pengembang, :Penerbit, :Gambar, :Metascore)";
+                    ('', :judul, :release_date, :Genre, :Platform, :Pengembang, :Penerbit, :Gambar, :Video, :Metascore)";
 
         $this->db->query($query);
         $this->db->bind('judul', $data['judul']);
@@ -38,6 +38,7 @@ class Game_model
         $this->db->bind('Pengembang', $data['Pengembang']);
         $this->db->bind('Penerbit', $data['Penerbit']);
         $this->db->bind('Gambar', $data['Gambar']);
+        $this->db->bind('Video', $data['Video']);
         $this->db->bind('Metascore', $data['Metascore']);
 
         $this->db->execute();
@@ -66,6 +67,7 @@ class Game_model
                     Pengembang = :Pengembang,
                     Penerbit = :Penerbit,
                     Gambar = :Gambar,
+                    Video = :Video,
                     Metascore = :Metascore
                 WHERE id = :id";
 
@@ -77,6 +79,7 @@ class Game_model
         $this->db->bind('Pengembang', $data['Pengembang']);
         $this->db->bind('Penerbit', $data['Penerbit']);
         $this->db->bind('Gambar', $data['Gambar']);
+        $this->db->bind('Video', $data['Video']);
         $this->db->bind('Metascore', $data['Metascore']);
         $this->db->bind('id', $data['id']);
 

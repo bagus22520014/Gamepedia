@@ -75,6 +75,11 @@
                             </div>
 
                             <div class="input-field">
+                                <label>Trailer</label>
+                                <input type="text" id="Video" name="Video" placeholder="Enter Trailer" required>
+                            </div>
+
+                            <div class="input-field">
                                 <label>Score</label>
                                 <input type="text" id="Metascore" name="Metascore" placeholder="Enter Score" required>
                             </div>
